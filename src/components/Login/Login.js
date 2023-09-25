@@ -65,10 +65,14 @@ const Login = (props) => {
 
   const validateEmailHandler = () => {
     setEmailIsValid(enteredEmail.includes("@"));
+    // You typically do NOT want to check an updated state based on another state, the setState function it is checking, in this case, enteredEmail, might not update in time therefore it
+    // can possibly return an inaccurate reading
   };
 
   const validatePasswordHandler = () => {
     setPasswordIsValid(enteredPassword.trim().length > 6);
+    // You typically do NOT want to check an updated state based on another state, the setState function it is checking, in this case, enteredEmail, might not update in time therefore it
+    // can possibly return an inaccurate reading
   };
 
   const submitHandler = (event) => {
